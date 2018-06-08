@@ -8,7 +8,7 @@
 
 ; list the packages you want
 
-(setq package-list '(evil-org cnfonts org-plus-contrib  org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets))
+(setq package-list '(evil-org cnfonts irony org-plus-contrib  org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets))
 
 
 
@@ -67,7 +67,7 @@
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(package-selected-packages
    (quote
-    (evil-org cnfonts org-plus-contrib ## org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets which-key try use-package))))
+    (irony-eldoc evil-org cnfonts org-plus-contrib ## org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -99,8 +99,16 @@
 (setq evil-want-C-i-jump nil)
 
 
+;; Python autocomplete
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+;; C++ autocomplete
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
 
 
 ;; enable linum package
@@ -122,7 +130,7 @@
 
 
 ;; enable theme atom-one-dark
-(load-theme 'atom-one-dark t)
+;(load-theme 'atom-one-dark t)
 
 
 ;; Set the shell
