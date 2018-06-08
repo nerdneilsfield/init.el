@@ -8,7 +8,7 @@
 
 ; list the packages you want
 
-(setq package-list '(package1 package2))
+(setq package-list '(evil-org cnfonts org-plus-contrib  org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets))
 
 
 
