@@ -8,7 +8,7 @@
 
 ; list the packages you want
 
-(setq package-list '(evil-org cnfonts irony org-plus-contrib  org-evil org-link-minor-mode atom-one-dark-theme evil jedi linum-relative org-bullets))
+(setq package-list '(evil-org cnfonts irony org-plus-contrib elpy  org-evil org-link-minor-mode atom-one-dark-theme evil  linum-relative org-bullets))
 
 
 
@@ -100,8 +100,9 @@
 
 
 ;; Python autocomplete
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+;(add-hook 'python-mode-hook 'jedi:setup)
+;(setq jedi:complete-on-dot t)
+(elpy-enable)
 
 ;; C++ autocomplete
 (add-hook 'c++-mode-hook 'irony-mode)
